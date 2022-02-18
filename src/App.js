@@ -18,11 +18,12 @@ export const App = () => {
 			</AppBar>
 			<div
 				style={{
-					width: "1024px",
+					maxWidth: "1024px",
 					display: "flex",
 					flexDirection: "row",
 					justifyContent: "center",
-					alignItems: "center",
+					alignContent: "center",
+					margin: "0 auto",
 				}}
 			>
 				<Routes>
