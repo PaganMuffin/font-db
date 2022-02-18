@@ -1,7 +1,35 @@
+import { AppBar, Button, IconButton, Toolbar, Typography } from "@mui/material";
+import { Routes, Route } from "react-router-dom";
+import { FontSearch } from "./pages/FontSearch";
+import { SubtitleScan } from "./pages/SubtitleScan";
+
 export const App = () => {
 	return (
 		<div>
-			<h1>App</h1>
+			<AppBar position="static" style={{ padding: 10 }}>
+				<Toolbar>
+					<Typography variant="h4" sx={{ flexGrow: 1 }}>
+						F-DB
+					</Typography>
+					<Button sx={{ padding: 1 }}>
+						<Typography variant="h6">Skanuj napisy</Typography>
+					</Button>
+				</Toolbar>
+			</AppBar>
+			<div
+				style={{
+					width: "1024px",
+					display: "flex",
+					flexDirection: "row",
+					justifyContent: "center",
+					alignItems: "center",
+				}}
+			>
+				<Routes>
+					<Route path="/scan" element={<SubtitleScan />} />
+					<Route path="/" element={<FontSearch />} />
+				</Routes>
+			</div>
 		</div>
 	);
 };
