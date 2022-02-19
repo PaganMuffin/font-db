@@ -8,10 +8,13 @@ export const App = () => {
 		<div>
 			<AppBar position="static" style={{ padding: 5 }}>
 				<Toolbar>
-					<Link to={"/"} style={{ flexGrow: 1, textDecoration: "none" }}>
+					<Link
+						to={"/"}
+						style={{ flexGrow: 1, textDecoration: "none", color: "white" }}
+					>
 						<Typography variant="h4">F-DB</Typography>
 					</Link>
-					<Link to={"/scan"} style={{ textDecoration: "none", color: "white" }}>
+					<Link to={"/scan"} style={{ textDecoration: "none" }}>
 						<Button sx={{ padding: 1 }}>
 							<Typography variant="h6">Skanuj napisy</Typography>
 						</Button>
