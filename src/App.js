@@ -6,12 +6,12 @@ import { SubtitleScan } from "./pages/SubtitleScan";
 export const App = () => {
 	return (
 		<div>
-			<AppBar position="static" style={{ padding: 10 }}>
+			<AppBar position="static" style={{ padding: 5 }}>
 				<Toolbar>
-					<Typography variant="h4" sx={{ flexGrow: 1 }}>
-						F-DB
-					</Typography>
-					<Link to={"/scan"} style={{ textDecoration: "none" }}>
+					<Link to={"/"} style={{ flexGrow: 1, textDecoration: "none" }}>
+						<Typography variant="h4">F-DB</Typography>
+					</Link>
+					<Link to={"/scan"} style={{ textDecoration: "none", color: "white" }}>
 						<Button sx={{ padding: 1 }}>
 							<Typography variant="h6">Skanuj napisy</Typography>
 						</Button>

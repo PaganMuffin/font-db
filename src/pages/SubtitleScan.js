@@ -39,6 +39,9 @@ export const SubtitleScan = () => {
 		setFilename(f.name);
 		setIsFilenameSet(true);
 		setFile(f);
+		setFonts([]);
+		setIsLoading(false);
+		setIsWorkerDone(false);
 	};
 
 	workerParser.onmessage = (e) => {
