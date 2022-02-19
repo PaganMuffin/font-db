@@ -13,24 +13,20 @@ export const FontView = ({ fontData }) => {
 				</Typography>
 				<Typography>Font fullName: {fontData.fullName}</Typography>
 			</Paper>
-			<Button
-				variant="contained"
-				sx={{
-					width: "100%",
-					backgroundColor: "#053e85",
-					color: "white",
-					"&:hover": {
-						backgroundColor: "#224f87",
-					},
-				}}
-				size="large"
-				component="a"
-				href={`${process.env.REACT_APP_S3_URL}/${fontData.filename}`}
-			>
-				<Typography variant="h6" style={{ fontWeight: 500 }}>
-					Pobierz
-				</Typography>
-			</Button>
+			<Paper>
+				<Button
+					sx={{
+						width: "100%",
+					}}
+					size="large"
+					component="a"
+					href={`${process.env.REACT_APP_S3_URL}/${fontData.filename}`}
+				>
+					<Typography variant="h6" style={{ fontWeight: 500 }}>
+						Pobierz
+					</Typography>
+				</Button>
+			</Paper>
 			<FontRender fontData={fontData} />
 		</div>
 	);
