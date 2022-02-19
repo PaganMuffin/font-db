@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import { AppBar, Button, IconButton, Toolbar, Typography } from "@mui/material";
+import { Routes, Route, Link } from "react-router-dom";
+import { FontSearch } from "./pages/FontSearch";
+import { SubtitleScan } from "./pages/SubtitleScan";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
-export default App;
+export const App = () => {
+	return (
+		<div>
+			<AppBar position="static" style={{ padding: 5 }}>
+				<Toolbar>
+					<Link to={"/"} style={{ flexGrow: 1, textDecoration: "none" }}>
+						<Typography variant="h4">F-DB</Typography>
+					</Link>
+					<Link to={"/scan"} style={{ textDecoration: "none", color: "white" }}>
+						<Button sx={{ padding: 1 }}>
+							<Typography variant="h6">Skanuj napisy</Typography>
+						</Button>
+					</Link>
+				</Toolbar>
+			</AppBar>
+			<div
+				style={{
+					maxWidth: "1024px",
+					display: "flex",
+					flexDirection: "row",
+					justifyContent: "center",
+					alignContent: "center",
+					margin: "0 auto",
+				}}
+			>
+				<Routes>
+					<Route path="/scan" element={<SubtitleScan />} />
+					<Route path="/" element={<FontSearch />} />
+				</Routes>
+			</div>
+		</div>
+	);
+};
