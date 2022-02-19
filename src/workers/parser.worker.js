@@ -25,7 +25,10 @@ onmessage = function ({ data }) {
 			?.body?.map((x) => {
 				if (x.key === "Dialogue") {
 					try {
-						return x.value.Text.split("\\fn")[1].split("\\")[0];
+						const firstPart = x.value.Text.split("\\fn")[1];
+						const firstSpecial = firstPart.match(/[}\\]/);
+						const final = firstPart.slice(0, firstSpecial.index).trim();
+						return final;
 					} catch (e) {}
 				}
 			});
